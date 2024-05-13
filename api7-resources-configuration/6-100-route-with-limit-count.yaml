@@ -1,0 +1,523 @@
+services:
+  - name: Demo
+    upstream:
+      scheme: http
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          weight: 100
+    plugins:
+      limit-count:
+        count: 2999999
+        time_window: 1
+        rejected_code: 429
+        key_type: "var"
+        key: "remote_addr"
+        policy: local
+    routes:
+      - uris:
+          - /hello
+        name: Hello
+        methods:
+          - GET
+      - uris:
+          - /v2
+        name: v2
+        methods:
+          - GET
+      - uris:
+          - /v3
+        name: v3
+        methods:
+          - GET
+      - uris:
+          - /v4
+        name: v4
+        methods:
+          - GET
+      - uris:
+          - /v5
+        name: v5
+        methods:
+          - GET
+      - uris:
+          - /v6
+        name: v6
+        methods:
+          - GET
+      - uris:
+          - /v7
+        name: v7
+        methods:
+          - GET
+      - uris:
+          - /v8
+        name: v8
+        methods:
+          - GET
+      - uris:
+          - /v9
+        name: v9
+        methods:
+          - GET
+      - uris:
+          - /v10
+        name: v10
+        methods:
+          - GET
+      - uris:
+          - /apiA1
+        name: apiA1
+        methods:
+          - GET
+      - uris:
+          - /apiA2
+        name: apiA2
+        methods:
+          - GET
+      - uris:
+          - /apiA3
+        name: apiA3
+        methods:
+          - GET
+      - uris:
+          - /apiA4
+        name: apiA4
+        methods:
+          - GET
+      - uris:
+          - /apiA5
+        name: apiA5
+        methods:
+          - GET
+      - uris:
+          - /apiA6
+        name: apiA6
+        methods:
+          - GET
+      - uris:
+          - /apiA7
+        name: apiA7
+        methods:
+          - GET
+      - uris:
+          - /apiA8
+        name: apiA8
+        methods:
+          - GET
+      - uris:
+          - /apiA9
+        name: apiA9
+        methods:
+          - GET
+      - uris:
+          - /apiA10
+        name: apiA10
+        methods:
+          - GET
+      - uris:
+          - /apiB1
+        name: apiB1
+        methods:
+          - GET
+      - uris:
+          - /apiB2
+        name: apiB2
+        methods:
+          - GET
+      - uris:
+          - /apiB3
+        name: apiB3
+        methods:
+          - GET
+      - uris:
+          - /apiB4
+        name: apiB4
+        methods:
+          - GET
+      - uris:
+          - /apiB5
+        name: apiB5
+        methods:
+          - GET
+      - uris:
+          - /apiB6
+        name: apiB6
+        methods:
+          - GET
+      - uris:
+          - /apiB7
+        name: apiB7
+        methods:
+          - GET
+      - uris:
+          - /apiB8
+        name: apiB8
+        methods:
+          - GET
+      - uris:
+          - /apiB9
+        name: apiB9
+        methods:
+          - GET
+      - uris:
+          - /apiB10
+        name: apiB10
+        methods:
+          - GET
+      - uris:
+          - /apiC1
+        name: apiC1
+        methods:
+          - GET
+      - uris:
+          - /apiC2
+        name: apiC2
+        methods:
+          - GET
+      - uris:
+          - /apiC3
+        name: apiC3
+        methods:
+          - GET
+      - uris:
+          - /apiC4
+        name: apiC4
+        methods:
+          - GET
+      - uris:
+          - /apiC5
+        name: apiC5
+        methods:
+          - GET
+      - uris:
+          - /apiC6
+        name: apiC6
+        methods:
+          - GET
+      - uris:
+          - /apiC7
+        name: apiC7
+        methods:
+          - GET
+      - uris:
+          - /apiC8
+        name: apiC8
+        methods:
+          - GET
+      - uris:
+          - /apiC9
+        name: apiC9
+        methods:
+          - GET
+      - uris:
+          - /apiC10
+        name: apiC10
+        methods:
+          - GET
+      - uris:
+          - /apiD1
+        name: apiD1
+        methods:
+          - GET
+      - uris:
+          - /apiD2
+        name: apiD2
+        methods:
+          - GET
+      - uris:
+          - /apiD3
+        name: apiD3
+        methods:
+          - GET
+      - uris:
+          - /apiD4
+        name: apiD4
+        methods:
+          - GET
+      - uris:
+          - /apiD5
+        name: apiD5
+        methods:
+          - GET
+      - uris:
+          - /apiD6
+        name: apiD6
+        methods:
+          - GET
+      - uris:
+          - /apiD7
+        name: apiD7
+        methods:
+          - GET
+      - uris:
+          - /apiD8
+        name: apiD8
+        methods:
+          - GET
+      - uris:
+          - /apiD9
+        name: apiD9
+        methods:
+          - GET
+      - uris:
+          - /apiD10
+        name: apiD10
+        methods:
+          - GET
+      - uris:
+          - /apiE1
+        name: apiE1
+        methods:
+          - GET
+      - uris:
+          - /apiE2
+        name: apiE2
+        methods:
+          - GET
+      - uris:
+          - /apiE3
+        name: apiE3
+        methods:
+          - GET
+      - uris:
+          - /apiE4
+        name: apiE4
+        methods:
+          - GET
+      - uris:
+          - /apiE5
+        name: apiE5
+        methods:
+          - GET
+      - uris:
+          - /apiE6
+        name: apiE6
+        methods:
+          - GET
+      - uris:
+          - /apiE7
+        name: apiE7
+        methods:
+          - GET
+      - uris:
+          - /apiE8
+        name: apiE8
+        methods:
+          - GET
+      - uris:
+          - /apiE9
+        name: apiE9
+        methods:
+          - GET
+      - uris:
+          - /apiE10
+        name: apiE10
+        methods:
+          - GET
+      - uris:
+          - /apiF1
+        name: apiF1
+        methods:
+          - GET
+      - uris:
+          - /apiF2
+        name: apiF2
+        methods:
+          - GET
+      - uris:
+          - /apiF3
+        name: apiF3
+        methods:
+          - GET
+      - uris:
+          - /apiF4
+        name: apiF4
+        methods:
+          - GET
+      - uris:
+          - /apiF5
+        name: apiF5
+        methods:
+          - GET
+      - uris:
+          - /apiF6
+        name: apiF6
+        methods:
+          - GET
+      - uris:
+          - /apiF7
+        name: apiF7
+        methods:
+          - GET
+      - uris:
+          - /apiF8
+        name: apiF8
+        methods:
+          - GET
+      - uris:
+          - /apiF9
+        name: apiF9
+        methods:
+          - GET
+      - uris:
+          - /apiF10
+        name: apiF10
+        methods:
+          - GET
+      - uris:
+          - /apiG1
+        name: apiG1
+        methods:
+          - GET
+      - uris:
+          - /apiG2
+        name: apiG2
+        methods:
+          - GET
+      - uris:
+          - /apiG3
+        name: apiG3
+        methods:
+          - GET
+      - uris:
+          - /apiG4
+        name: apiG4
+        methods:
+          - GET
+      - uris:
+          - /apiG5
+        name: apiG5
+        methods:
+          - GET
+      - uris:
+          - /apiG6
+        name: apiG6
+        methods:
+          - GET
+      - uris:
+          - /apiG7
+        name: apiG7
+        methods:
+          - GET
+      - uris:
+          - /apiG8
+        name: apiG8
+        methods:
+          - GET
+      - uris:
+          - /apiG9
+        name: apiG9
+        methods:
+          - GET
+      - uris:
+          - /apiG10
+        name: apiG10
+        methods:
+          - GET
+      - uris:
+          - /apiH1
+        name: apiH1
+        methods:
+          - GET
+      - uris:
+          - /apiH2
+        name: apiH2
+        methods:
+          - GET
+      - uris:
+          - /apiH3
+        name: apiH3
+        methods:
+          - GET
+      - uris:
+          - /apiH4
+        name: apiH4
+        methods:
+          - GET
+      - uris:
+          - /apiH5
+        name: apiH5
+        methods:
+          - GET
+      - uris:
+          - /apiH6
+        name: apiH6
+        methods:
+          - GET
+      - uris:
+          - /apiH7
+        name: apiH7
+        methods:
+          - GET
+      - uris:
+          - /apiH8
+        name: apiH8
+        methods:
+          - GET
+      - uris:
+          - /apiH9
+        name: apiH9
+        methods:
+          - GET
+      - uris:
+          - /apiH10
+        name: apiH10
+        methods:
+          - GET
+      - uris:
+          - /apiI1
+        name: apiI1
+        methods:
+          - GET
+      - uris:
+          - /apiI2
+        name: apiI2
+        methods:
+          - GET
+      - uris:
+          - /apiI3
+        name: apiI3
+        methods:
+          - GET
+      - uris:
+          - /apiI4
+        name: apiI4
+        methods:
+          - GET
+      - uris:
+          - /apiI5
+        name: apiI5
+        methods:
+          - GET
+      - uris:
+          - /apiI6
+        name: apiI6
+        methods:
+          - GET
+      - uris:
+          - /apiI7
+        name: apiI7
+        methods:
+          - GET
+      - uris:
+          - /apiI8
+        name: apiI8
+        methods:
+          - GET
+      - uris:
+          - /apiI9
+        name: apiI9
+        methods:
+          - GET
+      - uris:
+          - /apiI10
+        name: apiI10
+        methods:
+          - GET
+global_rules:
+  prometheus:
+    _meta:
+      disable: true
+    prefer_name: false
+        

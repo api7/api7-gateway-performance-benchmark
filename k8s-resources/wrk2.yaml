@@ -1,0 +1,21 @@
+# wrk2 deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wrk2-deployment
+  namespace: api7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wrk2
+  template:
+    metadata:
+      labels:
+        app: wrk2
+    spec:
+      containers:
+      - name: wrk2
+        image: bootjp/wrk2
+      nodeSelector:
+        nodeName: wrk2

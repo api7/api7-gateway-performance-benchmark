@@ -1,0 +1,20 @@
+services:
+  - name: Demo
+    upstream:
+      scheme: http
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          weight: 100
+    routes:
+      - uris:
+          - /hello
+        name: Hello
+        methods:
+          - GET
+global_rules:
+  prometheus:
+    _meta:
+      disable: true
+    prefer_name: false
+        

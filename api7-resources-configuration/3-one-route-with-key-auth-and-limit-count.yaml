@@ -1,0 +1,35 @@
+services:
+  - name: Demo
+    upstream:
+      scheme: http
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          weight: 100
+    routes:
+      - uris:
+          - /hello
+        name: Hello
+        methods:
+          - GET
+        plugins:
+          limit-count:
+            count: 2999999
+            time_window: 1
+            rejected_code: 429
+            key_type: "var"
+            key: "remote_addr"
+            policy: local
+          key-auth:
+            header: apikey
+consumers:
+  - username: JaneDoe
+    plugins:
+      key-auth:
+        key: jane-key
+global_rules:
+  prometheus:
+    _meta:
+      disable: true
+    prefer_name: false
+        

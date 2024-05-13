@@ -1,0 +1,65 @@
+---
+# nginx conf configmap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: api7
+data:
+  nginx.conf: |
+    master_process on;
+
+    worker_processes 1;
+    events {
+        worker_connections 4096;
+    }
+
+    http {
+        resolver ipv6=off 8.8.8.8;
+
+        #access_log logs/access.log;
+        access_log off;
+        server_tokens off;
+        keepalive_requests 10000000;
+
+        server {
+            listen 1980;
+            server_name _;
+
+            location / {
+                proxy_set_header Connection "";
+                return 200 "hello world\n";
+            }
+        }
+    }
+---
+# nginx deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: api7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+      nodeSelector:
+        nodeName: upstream
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: nginx-config
+---
