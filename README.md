@@ -164,12 +164,22 @@ Connected to the backend successfully!
 
 We have provided adc configurations for each of the 8 scenarios, which you can use directly:
 
-1. [One route without plugins](./api7-resources-configuration/1-one-route-without-plugin.yaml);
-2. [One route with limit-count plugin](./api7-resources-configuration/2-one-route-with-limit-count.yaml);
-3. [One route with key-auth and limit-count plugin](./api7-resources-configuration/3-one-route-with-key-auth-and-limit-count.yaml);
-4. [One route and one consumer with key-auth plugin](./api7-resources-configuration/4-one-route-with-key-auth.yaml);
-5. [100 routes without plugins](./api7-resources-configuration/5-100-route-without-plugin.yaml);
-6. [100 routes with limit-count plugin](./api7-resources-configuration/6-100-route-with-limit-count.yaml);
-7. [100 routes and 100 consumers with key-auth and limit-count plugin](./api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml);
-8. [100 routes and 100 consumers with key-auth plugin](./api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml);
+1. [One route without plugins](./api7-resources-configuration/1-one-route-without-plugin.yaml)
+2. [One route with limit-count plugin](./api7-resources-configuration/2-one-route-with-limit-count.yaml)
+3. [One route with key-auth and limit-count plugin](./api7-resources-configuration/3-one-route-with-key-auth-and-limit-count.yaml)
+4. [One route and one consumer with key-auth plugin](./api7-resources-configuration/4-one-route-with-key-auth.yaml)
+5. [100 routes without plugins](./api7-resources-configuration/5-100-route-without-plugin.yaml)
+6. [100 routes with limit-count plugin](./api7-resources-configuration/6-100-route-with-limit-count.yaml)
+7. [100 routes and 100 consumers with key-auth and limit-count plugin](./api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
+8. [100 routes and 100 consumers with key-auth plugin](./api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml)
 9. [One route with mocking plugin](./api7-resources-configuration/9-one-route-without-plugin.yaml)
+
+## Example
+
+```
+$ ./adc ping
+
+Connected to backend successfully!
+
+$ ./adc sync -f api7-resources-configuration/<filename>.yaml
+```
