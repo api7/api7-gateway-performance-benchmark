@@ -2,7 +2,7 @@
 
 ## Prerequisite(s)
 
-- k8s cluster
+- K8s cluster
 - Install API7 Gateway (CP and DP) 
 - A test upstream ([NGINX Upstream](./k8s-resources/upstream-nginx.yaml))
 - Install [ADC](https://docs.api7.ai/enterprise/best-practices/devops-adc#adc-introduction) (A CLI tool to connect gateway instances and publish configurations)
@@ -162,7 +162,7 @@ Connected to the backend successfully!
 
 ## Starting Performance Testing
 
-We have provided adc configurations for each of the 8 scenarios, which you can use directly:
+We have provided adc configurations for each of the 9 scenarios, which you can use directly:
 
 1. [One route without plugins](./api7-resources-configuration/1-one-route-without-plugin.yaml)
 2. [One route with limit-count plugin](./api7-resources-configuration/2-one-route-with-limit-count.yaml)
