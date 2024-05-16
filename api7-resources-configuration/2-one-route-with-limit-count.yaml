@@ -20,9 +20,3 @@ services:
             key_type: "var"
             key: "remote_addr"
             policy: local
-global_rules:
-  prometheus:
-    _meta:
-      disable: true
-    prefer_name: false
-        

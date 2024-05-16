@@ -507,9 +507,3 @@ services:
         name: apiI10
         methods:
           - GET
-global_rules:
-  prometheus:
-    _meta:
-      disable: true
-    prefer_name: false
-        

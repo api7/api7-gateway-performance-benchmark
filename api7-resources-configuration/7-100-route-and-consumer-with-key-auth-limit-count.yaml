@@ -918,9 +918,3 @@ consumers:
     plugins:
       key-auth:
         key: JohnI-key10
-global_rules:
-  prometheus:
-    _meta:
-      disable: true
-    prefer_name: false
-        

@@ -172,3 +172,4 @@ We have provided adc configurations for each of the 8 scenarios, which you can u
 6. [100 routes with limit-count plugin](./api7-resources-configuration/6-100-route-with-limit-count.yaml);
 7. [100 routes and 100 consumers with key-auth and limit-count plugin](./api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml);
 8. [100 routes and 100 consumers with key-auth plugin](./api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml);
+9. [One route with mocking plugin](./api7-resources-configuration/9-one-route-without-plugin.yaml)

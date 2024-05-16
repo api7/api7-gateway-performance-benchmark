@@ -12,4 +12,7 @@ services:
         name: Hello
         methods:
           - GET
+        plugins:
+          mocking:
+            response_example: APISIX Mock!
 
