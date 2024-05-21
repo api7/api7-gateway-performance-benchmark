@@ -9,9 +9,9 @@ data:
   nginx.conf: |
     master_process on;
 
-    worker_processes 1;
+    worker_processes 8;
     events {
-        worker_connections 4096;
+        worker_connections 8192;
     }
 
     http {
