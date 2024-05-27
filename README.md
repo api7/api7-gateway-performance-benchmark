@@ -9,7 +9,7 @@
 
 ## Steps
 
-### Config K8s Cluster Node Label
+### Configure K8s Cluster Node Label
 
 1. Verify cluster is running:
 
@@ -22,7 +22,7 @@ ip-172-31-24-73.ec2.internal    Ready    <none>   54m   v1.29.3-eks-ae9a62a
 ip-172-31-32-45.ec2.internal    Ready    <none>   61m   v1.29.3-eks-ae9a62a
 ```
 
-2. Labeling of nodes:
+2. Label the nodes:
 
 ```
 $ kubectl label nodes ip-172-31-22-219.ec2.internal nodeName=upstream
@@ -74,7 +74,7 @@ api7ee3-dashboard    ClusterIP   10.100.89.120   <none>        7080/TCP,7443/TCP
 api7ee3-dp-manager   ClusterIP   10.100.3.182    <none>        7900/TCP,7943/TCP   2m3s   app.kubernetes.io/component=dp-manager,app.kubernetes.io/instance=api7ee3,app.kubernetes.io/name=api7ee3
 ```
 
-3. Forward the dashboard port to the local machine, login to the console and upload the licence:
+3. Forward the dashboard port to the local machine, log in to the console and upload the licence:
 
 [License Free Trial](https://api7.ai/try?product=enterprise)
 
@@ -84,11 +84,11 @@ $ kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
 
 ### Install API7 Gateway (Data Plane)
 
-1. Login to the dashboard and configure the "Control Plane Address" in the **Gateway Settings**: `http://api7ee3-dp-manager:7900`
+1. Log in to the dashboard and configure the "Control Plane Address" in the **Gateway Settings**: `http://api7ee3-dp-manager:7900`
 
 ![Gateway Settings](https://static.apiseven.com/uploads/2024/05/13/S5O8D2XJ_gateway-settings.jpeg)
 
-2. Disable global plugin prometheus:
+2. Disable global plugin `prometheus`:
 
 ![Disable Prometheus](https://static.apiseven.com/uploads/2024/05/13/2XUKYxfv_disable-prometheus.jpeg)
 
@@ -105,7 +105,7 @@ $ helm install -n api7 --create-namespace api7-ee-3-gateway api7/gateway \
   --set "apisix.extraEnvVars[0].name=API7_CONTROL_PLANE_TOKEN" \
   --set "apisix.extraEnvVars[0].value=a7ee-nw9ZWpFo4U67cYwNkN7456ACkJH6P0waB6PNT1IqCUT6eh8c3Fe48fceb18c474ff496bc8913140c6cec" \
   --set "apisix.image.repository=api7/api7-ee-3-gateway" \
-  --set "apisix.image.tag=3.2.11.0" \
+  --set "apisix.image.tag=3.2.11.3" \
   --set "etcd.host[0]=http://api7ee3-dp-manager:7900" \
   --set "apisix.replicaCount=1"
 ```
@@ -131,9 +131,9 @@ kubectl apply -f k8s-resources/wrk2.yaml
 
 ### Install ADC
 
-- https://run.api7.ai/adc/release/adc_0.8.0_linux_amd64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.8.0_linux_arm64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.8.0_darwin_arm64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.9.0_linux_amd64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.9.0_linux_arm64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.9.0_darwin_arm64.tar.gz
 
 1. Generate API Token
 
