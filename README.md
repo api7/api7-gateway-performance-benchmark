@@ -3,7 +3,7 @@
 ## Prerequisite(s)
 
 - K8s cluster
-- Install API7 Gateway (CP and DP) 
+- Install API7 Gateway (CP and DP) or APISIX
 - A test upstream ([NGINX Upstream](./k8s-resources/upstream-nginx.yaml))
 - Install [ADC](https://docs.api7.ai/enterprise/best-practices/devops-adc#adc-introduction) (A CLI tool to connect gateway instances and publish configurations)
 
@@ -44,7 +44,43 @@ $ kubectl create namespace api7
 namespace/api7 created
 ```
 
-### Install API7 EE Control Plane
+### Install API7 Enterprise or APISIX
+
+#### Install APISIX
+
+1. Install APISIX:
+
+```
+$ helm repo add apisix https://charts.apiseven.com
+$ helm repo update
+$ helm install apisix apisix/apisix --create-namespace  --namespace apisix --set nodeSelector."nodeName"=apisix
+```
+
+By default etcd enable persistent storage and you may receive some errors if you do not configure [StorageClass](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) for your cluster. 
+
+You can also temporarily disable persistent storage with the command below, but be careful **not to disable it during a production environment** or the data will be lost after the Pod restarts.
+
+```
+$ helm install apisix apisix/apisix --create-namespace  --namespace apisix --set nodeSelector."nodeName"=apisix --set etcd.persistence.enabled=false
+```
+
+2. Check deployment status:
+
+```
+$ kubectl get svc -owide -l app.kubernetes.io/name=apisix -n apisix
+
+apisix-admin     ClusterIP   10.100.132.48    <none>        9180/TCP       110s   app.kubernetes.io/instance=apisix,app.kubernetes.io/name=apisix
+apisix-gateway   NodePort    10.100.119.191   <none>        80:30180/TCP   110s   app.kubernetes.io/instance=apisix,app.kubernetes.io/name=apisix
+```
+
+3. Forward the Admin API port and gateway port:
+
+```
+$ kubectl -n apisix port-forward svc/apisix-admin 9180:9180
+$ kubectl -n apisix port-forward svc/apisix-gateway 9080:80
+```
+
+#### Install API7 EE Control Plane
 
 1. Install API7 Control Plane:
 
@@ -82,7 +118,7 @@ api7ee3-dp-manager   ClusterIP   10.100.3.182    <none>        7900/TCP,7943/TCP
 $ kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
 ```
 
-### Install API7 Gateway (Data Plane)
+#### Install API7 Gateway (Data Plane)
 
 1. Log in to the dashboard and configure the "Control Plane Address" in the **Gateway Settings**: `http://api7ee3-dp-manager:7900`
 
@@ -131,6 +167,14 @@ kubectl apply -f k8s-resources/wrk2.yaml
 
 ### Install ADC
 
+Use APISIX or API7 Enterprise v3.2.13.0
+
+- https://run.api7.ai/adc/release/adc_0.11.0_linux_amd64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.11.0_linux_arm64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.11.0_darwin_arm64.tar.gz
+
+Use API7 Enterprise v3.2.11.3
+
 - https://run.api7.ai/adc/release/adc_0.9.0_linux_amd64.tar.gz
 - https://run.api7.ai/adc/release/adc_0.9.0_linux_arm64.tar.gz
 - https://run.api7.ai/adc/release/adc_0.9.0_darwin_arm64.tar.gz
@@ -146,10 +190,21 @@ ADC needs an API Token to access Admin APIs. You can generate an API Token from 
 Create a `.env` file in the same directory as the ADC binary.
 
 ```
+# API7 Enterprise Example
+
 ADC_BACKEND=api7ee
 ADC_SERVER=https://127.0.0.1:7443
 ADC_TOKEN=a7ee-6baF8488i8wJ5aj7mEo3BT705573eC8GH905qGrdn889zUWcR37df66a34e9954b61918c5dfd13abce3e
 ADC_GATEWAY_GROUP=default
+```
+
+```
+# APISIX Example
+
+ADC_ENABLE_APISIX_FORCE=1
+ADC_BACKEND=apisix
+ADC_SERVER=http://127.0.0.1:9180
+ADC_TOKEN=edd1c9f034335f136f87ad84b625c8f1
 ```
 
 3. Verify ADC Status
@@ -164,15 +219,15 @@ Connected to the backend successfully!
 
 We have provided adc configurations for each of the 9 scenarios, which you can use directly:
 
-1. [One route without plugins](./api7-resources-configuration/1-one-route-without-plugin.yaml)
-2. [One route with limit-count plugin](./api7-resources-configuration/2-one-route-with-limit-count.yaml)
-3. [One route with key-auth and limit-count plugin](./api7-resources-configuration/3-one-route-with-key-auth-and-limit-count.yaml)
-4. [One route and one consumer with key-auth plugin](./api7-resources-configuration/4-one-route-with-key-auth.yaml)
-5. [100 routes without plugins](./api7-resources-configuration/5-100-route-without-plugin.yaml)
-6. [100 routes with limit-count plugin](./api7-resources-configuration/6-100-route-with-limit-count.yaml)
-7. [100 routes and 100 consumers with key-auth and limit-count plugin](./api7-resources-configuration/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
-8. [100 routes and 100 consumers with key-auth plugin](./api7-resources-configuration/8-100-route-and-consumer-with-key-auth.yaml)
-9. [One route with mocking plugin](./api7-resources-configuration/9-one-route-with-mocking.yaml)
+1. [One route without plugins](./adc_conf/1-one-route-without-plugin.yaml)
+2. [One route with limit-count plugin](./adc_conf/2-one-route-with-limit-count.yaml)
+3. [One route with key-auth and limit-count plugin](./adc_conf/3-one-route-with-key-auth-and-limit-count.yaml)
+4. [One route and one consumer with key-auth plugin](./adc_conf/4-one-route-with-key-auth.yaml)
+5. [100 routes without plugins](./adc_conf/5-100-route-without-plugin.yaml)
+6. [100 routes with limit-count plugin](./adc_conf/6-100-route-with-limit-count.yaml)
+7. [100 routes and 100 consumers with key-auth and limit-count plugin](./adc_conf/7-100-route-and-consumer-with-key-auth-limit-count.yaml)
+8. [100 routes and 100 consumers with key-auth plugin](./adc_conf/8-100-route-and-consumer-with-key-auth.yaml)
+9. [One route with mocking plugin](./adc_conf/9-one-route-with-mocking.yaml)
 
 ## Example
 
@@ -181,5 +236,5 @@ $ ./adc ping
 
 Connected to backend successfully!
 
-$ ./adc sync -f api7-resources-configuration/<filename>.yaml
+$ ./adc sync -f adc_conf/<filename>.yaml
 ```
