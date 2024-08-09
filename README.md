@@ -92,9 +92,9 @@ $ helm repo update
 $ helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee -n api7
 ```
 
-By default postgresql and prometheus enable persistent storage and you may receive some errors if you do not configure [StorageClass](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) for your cluster. 
+By default PostgreSQL and Prometheus enable persistent storage and you may receive some errors if you do not configure [StorageClass](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) for your cluster. 
 
-You can also temporarily disable persistent storage with the command below, but be careful **not to disable it during a production environment** or the data will be lost after the Pod restarts.
+You can also temporarily disable persistent storage with the command below, but be careful **not to disable it in a production environment** or the data will be lost after the Pod restarts.
 
 ```
 $ helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee --set postgresql.primary.persistence.enabled=false --set prometheus.server.persistence.enabled=false -n api7
@@ -120,9 +120,9 @@ $ kubectl -n api7 port-forward svc/api7ee3-dashboard 7443:7443
 
 #### Install API7 Gateway (Data Plane)
 
-1. Log in to the dashboard and configure the "Control Plane Address" in the **Gateway Settings**: `http://api7ee3-dp-manager:7900`
+1. Log in to the dashboard and configure the "Control Plane Address" in the **Gateway Settings**: `https://api7ee3-dp-manager:7943`
 
-![Gateway Settings](https://static.apiseven.com/uploads/2024/05/13/S5O8D2XJ_gateway-settings.jpeg)
+![Gateway Settings](https://static.apiseven.com/uploads/2024/08/09/MAIazLjD_control-plane-addr.jpeg)
 
 2. Disable global plugin `prometheus`:
 
@@ -137,13 +137,51 @@ Select the **Kubernetes** method and configure the "namespace" to generate an in
 ```
 $ helm repo add api7 https://charts.api7.ai
 $ helm repo update
-$ helm install -n api7 --create-namespace api7-ee-3-gateway api7/gateway \
-  --set "apisix.extraEnvVars[0].name=API7_CONTROL_PLANE_TOKEN" \
-  --set "apisix.extraEnvVars[0].value=a7ee-nw9ZWpFo4U67cYwNkN7456ACkJH6P0waB6PNT1IqCUT6eh8c3Fe48fceb18c474ff496bc8913140c6cec" \
+$ cat > /tmp/tls.crt <<EOF
+-----BEGIN CERTIFICATE-----
+MIIBiDCCATqgAwIBAgICBAAwBQYDK2VwMEQxCzAJBgNVBAYTAlVTMRMwEQYDVQQI
+EwpDYWxpZm9ybmlhMQ0wCwYDVQQKEwRBUEk3MREwDwYDVQQDEwhBUEk3IEluYzAe
+Fw0yNDA4MDkwNjM0NDRaFw0yNTA5MDgwNjM0NDRaMDAxDTALBgNVBAoTBEFQSTcx
+HzAdBgNVBAMTFmFwaTdlZTMtYXBpc2l4LWdhdGV3YXkwKjAFBgMrZXADIQA4EF9i
+qogMWwWQnhrD478bCTQxxeDrT8zUUC+KC4lbLaNkMGIwDgYDVR0PAQH/BAQDAgeA
+MBMGA1UdJQQMMAoGCCsGAQUFBwMCMC0GA1UdDgQmBCQzMmE2MTU3Yi0yMGFmLTQ4
+NDctYWEyOC04M2M1M2ZmMTY4ZDAwDAYDVR0jBAUwA4ABMDAFBgMrZXADQQDzxx2i
+QV62ZB0WOdxofuQ2J+35sh6tYCOayrjAn5KISQ5L1JMIrDZKotq5G8JLM3qMs9Nc
+DZjDWzx+W1j94GAO
+-----END CERTIFICATE-----
+EOF
+$ cat > /tmp/tls.key <<EOF
+-----BEGIN PRIVATE KEY-----
+MC4CAQAwBQYDK2VwBCIEILY+bFM98L+OLxTWd73hnl9FmYGfhGASUhuYrpt/Q0CE
+-----END PRIVATE KEY-----
+EOF
+$ cat > /tmp/ca.crt <<EOF
+-----BEGIN CERTIFICATE-----
+MIIBdjCCASigAwIBAgIRAJDZ9s+rZMNiqiiAyT3NXpkwBQYDK2VwMEQxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMQ0wCwYDVQQKEwRBUEk3MREwDwYD
+VQQDEwhBUEk3IEluYzAeFw0yNDA4MDkwNjI4MDBaFw0zNDA4MDcwNjI4MDBaMEQx
+CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMQ0wCwYDVQQKEwRBUEk3
+MREwDwYDVQQDEwhBUEk3IEluYzAqMAUGAytlcAMhAN/VCNB2ChcL4BrXVImIW/EH
+YZi2oDrXVub/mXaMSr7Zoy8wLTAOBgNVHQ8BAf8EBAMCAoQwDwYDVR0TAQH/BAUw
+AwEB/zAKBgNVHQ4EAwQBMDAFBgMrZXADQQCA0M1McTsw6c9LGqmFP1g/BXNyeyDI
+dBnVnPlZgCwMQCDqkI9S8wyZbz4jLGGccKnqAclNhuJsSn94UGuteaIG
+-----END CERTIFICATE-----
+EOF
+$ kubectl create secret generic -n api7 api7-ee-3-gateway-tls --from-file=tls.crt=/tmp/tls.crt --from-file=tls.key=/tmp/tls.key --from-file=ca.crt=/tmp/ca.crt
+$ helm upgrade --install -n api7 --create-namespace api7-ee-3-gateway api7/gateway \
+  --set "etcd.auth.tls.enabled=true" \
+  --set "etcd.auth.tls.existingSecret=api7-ee-3-gateway-tls" \
+  --set "etcd.auth.tls.certFilename=tls.crt" \
+  --set "etcd.auth.tls.certKeyFilename=tls.key" \
+  --set "etcd.auth.tls.verify=true" \
+  --set "gateway.tls.existingCASecret=api7-ee-3-gateway-tls" \
+  --set "gateway.tls.certCAFilename=ca.crt" \
+  --set "apisix.extraEnvVars[0].name=API7_GATEWAY_GROUP_SHORT_ID" \
+  --set "apisix.extraEnvVars[0].value=default" \
+  --set "etcd.host[0]=https://api7ee3-dp-manager:7943" \
+  --set "apisix.replicaCount=1" \
   --set "apisix.image.repository=api7/api7-ee-3-gateway" \
-  --set "apisix.image.tag=3.2.11.3" \
-  --set "etcd.host[0]=http://api7ee3-dp-manager:7900" \
-  --set "apisix.replicaCount=1"
+  --set "apisix.image.tag=3.2.14.3"
 ```
 
 **Note:** We should install the Gateway on a separate Node and set up the `worker_process` as needed. You can set it with a flag:
