@@ -94,7 +94,7 @@ $ helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set p
 
 By default PostgreSQL and Prometheus enable persistent storage and you may receive some errors if you do not configure [StorageClass](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic) for your cluster. 
 
-You can also temporarily disable persistent storage with the command below, but be careful **not to disable it during a production environment** or the data will be lost after the Pod restarts.
+You can also temporarily disable persistent storage with the command below, but be careful **not to disable it in a production environment** or the data will be lost after the Pod restarts.
 
 ```
 $ helm install api7ee3 api7/api7ee3 --set nodeSelector."nodeName"=api7ee --set postgresql.primary.nodeSelector."nodeName"=api7ee --set prometheus.server.nodeSelector."nodeName"=api7ee --set postgresql.primary.persistence.enabled=false --set prometheus.server.persistence.enabled=false -n api7
