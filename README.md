@@ -181,7 +181,7 @@ $ helm upgrade --install -n api7 --create-namespace api7-ee-3-gateway api7/gatew
   --set "etcd.host[0]=https://api7ee3-dp-manager:7943" \
   --set "apisix.replicaCount=1" \
   --set "apisix.image.repository=api7/api7-ee-3-gateway" \
-  --set "apisix.image.tag=3.2.14.3"
+  --set "apisix.image.tag=3.8.3"
 ```
 
 **Note:** We should install the Gateway on a separate Node and set up the `worker_process` as needed. You can set it with a flag:
@@ -205,17 +205,11 @@ kubectl apply -f k8s-resources/wrk2.yaml
 
 ### Install ADC
 
-Use APISIX or API7 Enterprise v3.2.13.0
+Use APISIX or API7 Enterprise.
 
-- https://run.api7.ai/adc/release/adc_0.11.0_linux_amd64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.11.0_linux_arm64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.11.0_darwin_arm64.tar.gz
-
-Use API7 Enterprise v3.2.11.3
-
-- https://run.api7.ai/adc/release/adc_0.9.0_linux_amd64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.9.0_linux_arm64.tar.gz
-- https://run.api7.ai/adc/release/adc_0.9.0_darwin_arm64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.19.1_linux_amd64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.19.1_linux_arm64.tar.gz
+- https://run.api7.ai/adc/release/adc_0.19.1_darwin_arm64.tar.gz
 
 1. Generate API Token
 
@@ -275,4 +269,16 @@ $ ./adc ping
 Connected to backend successfully!
 
 $ ./adc sync -f adc_conf/<filename>.yaml
+
+# wrk
+# test upstream
+$ wrk -c100 -t4 -d120 -R50000 -U http://172.31.6.98:1980/hello
+
+# 1 work_process
+$ wrk -c100 -t4 -d120 -R50000 -U http://172.31.10.203:9080/hello
+$ wrk -c100 -t4 -d120 -R50000 -U http://172.31.10.203:9080/hello -H 'apikey: jack-key'
+
+# 4 work_process
+$ wrk -c200 -t4 -d120 -R200000 -U http://172.31.6.58:9080/hello
+$ wrk -c200 -t4 -d120 -R200000 -U http://172.31.6.58:9080/hello -H 'apikey: jack-key'
 ```
