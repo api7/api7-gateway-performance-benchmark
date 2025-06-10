@@ -1,15 +1,23 @@
 services:
   - name: Demo
+    routes:
+      - name: Hello
+        methods:
+          - GET
+        priority: 0
+        uris:
+          - /hello
+    strip_path_prefix: true
     upstream:
-      scheme: http
+      name: default
+      hash_on: vars
       nodes:
         - host: 172.31.47.150
           port: 1980
+          priority: 0
           weight: 100
-    routes:
-      - uris:
-          - /hello
-        name: Hello
-        methods:
-          - GET
-
+      pass_host: pass
+      retry_timeout: 0
+      scheme: http
+      type: roundrobin
+    upstreams: []
