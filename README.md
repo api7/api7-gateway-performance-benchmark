@@ -274,6 +274,7 @@ $ ./adc sync -f adc_conf/<filename>.yaml
 # test upstream
 $ wrk -c100 -t4 -d120 -R50000 -U http://172.31.6.98:1980/hello
 
+# test gateway
 # 1 work_process
 $ wrk -c100 -t4 -d120 -R50000 -U http://172.31.10.203:9080/hello
 $ wrk -c100 -t4 -d120 -R50000 -U http://172.31.10.203:9080/hello -H 'apikey: jack-key'
