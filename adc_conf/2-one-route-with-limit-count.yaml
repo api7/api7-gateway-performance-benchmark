@@ -1,22 +1,31 @@
 services:
   - name: Demo
-    upstream:
-      scheme: http
-      nodes:
-        - host: 172.31.47.150
-          port: 1980
-          weight: 100
     routes:
-      - uris:
-          - /hello
-        name: Hello
+      - name: Hello
         methods:
           - GET
         plugins:
           limit-count:
             count: 2999999
-            time_window: 1
-            rejected_code: 429
-            key_type: "var"
-            key: "remote_addr"
+            key: remote_addr
+            key_type: var
             policy: local
+            rejected_code: 429
+            time_window: 1
+        priority: 0
+        uris:
+          - /hello
+    strip_path_prefix: true
+    upstream:
+      name: default
+      hash_on: vars
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          priority: 0
+          weight: 100
+      pass_host: pass
+      retry_timeout: 0
+      scheme: http
+      type: roundrobin
+    upstreams: []

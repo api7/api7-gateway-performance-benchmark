@@ -1,22 +1,33 @@
+consumers:
+  - username: JaneDoe
+    credentials:
+      - name: hello
+        config:
+          key: jane-key
+        type: key-auth
 services:
   - name: Demo
-    upstream:
-      scheme: http
-      nodes:
-        - host: 172.31.47.150
-          port: 1980
-          weight: 100
     routes:
-      - uris:
-          - /hello
-        name: Hello
+      - name: Hello
         methods:
           - GET
         plugins:
           key-auth:
             header: apikey
-consumers:
-  - username: JaneDoe
-    plugins:
-      key-auth:
-        key: jane-key
+        priority: 0
+        uris:
+          - /hello
+    strip_path_prefix: true
+    upstream:
+      name: default
+      hash_on: vars
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          priority: 0
+          weight: 100
+      pass_host: pass
+      retry_timeout: 0
+      scheme: http
+      type: roundrobin
+    upstreams: []

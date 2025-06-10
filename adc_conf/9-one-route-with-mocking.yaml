@@ -1,18 +1,25 @@
 services:
   - name: Demo
-    upstream:
-      scheme: http
-      nodes:
-        - host: 172.31.47.150
-          port: 1980
-          weight: 100
     routes:
-      - uris:
-          - /hello
-        name: Hello
+      - name: Hello
         methods:
           - GET
         plugins:
           mocking:
             response_example: APISIX Mock!
-
+        priority: 0
+        uris:
+          - /hello
+    strip_path_prefix: true
+    upstream:
+      name: default
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          priority: 0
+          weight: 100
+      pass_host: pass
+      retry_timeout: 0
+      scheme: http
+      type: roundrobin
+    upstreams: []

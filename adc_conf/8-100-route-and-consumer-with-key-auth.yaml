@@ -1,913 +1,1239 @@
+consumers:
+  - username: JaneDoe
+    credentials:
+      - name: hello
+        config:
+          key: jane-key
+        type: key-auth
+  - username: John10
+    credentials:
+      - name: hello
+        config:
+          key: john-key10
+        type: key-auth
+  - username: John2
+    credentials:
+      - name: hello
+        config:
+          key: john-key2
+        type: key-auth
+  - username: John3
+    credentials:
+      - name: hello
+        config:
+          key: john-key3
+        type: key-auth
+  - username: John4
+    credentials:
+      - name: hello
+        config:
+          key: john-key4
+        type: key-auth
+  - username: John5
+    credentials:
+      - name: hello
+        config:
+          key: john-key5
+        type: key-auth
+  - username: John6
+    credentials:
+      - name: hello
+        config:
+          key: john-key6
+        type: key-auth
+  - username: John7
+    credentials:
+      - name: hello
+        config:
+          key: john-key7
+        type: key-auth
+  - username: John8
+    credentials:
+      - name: hello
+        config:
+          key: john-key8
+        type: key-auth
+  - username: John9
+    credentials:
+      - name: hello
+        config:
+          key: john-key9
+        type: key-auth
+  - username: JohnA1
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key1
+        type: key-auth
+  - username: JohnA10
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key10
+        type: key-auth
+  - username: JohnA2
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key2
+        type: key-auth
+  - username: JohnA3
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key3
+        type: key-auth
+  - username: JohnA4
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key4
+        type: key-auth
+  - username: JohnA5
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key5
+        type: key-auth
+  - username: JohnA6
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key6
+        type: key-auth
+  - username: JohnA7
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key7
+        type: key-auth
+  - username: JohnA8
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key8
+        type: key-auth
+  - username: JohnA9
+    credentials:
+      - name: hello
+        config:
+          key: JohnA-key9
+        type: key-auth
+  - username: JohnB1
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key1
+        type: key-auth
+  - username: JohnB10
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key10
+        type: key-auth
+  - username: JohnB2
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key2
+        type: key-auth
+  - username: JohnB3
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key3
+        type: key-auth
+  - username: JohnB4
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key4
+        type: key-auth
+  - username: JohnB5
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key5
+        type: key-auth
+  - username: JohnB6
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key6
+        type: key-auth
+  - username: JohnB7
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key7
+        type: key-auth
+  - username: JohnB8
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key8
+        type: key-auth
+  - username: JohnB9
+    credentials:
+      - name: hello
+        config:
+          key: JohnB-key9
+        type: key-auth
+  - username: JohnC1
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key1
+        type: key-auth
+  - username: JohnC10
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key10
+        type: key-auth
+  - username: JohnC2
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key2
+        type: key-auth
+  - username: JohnC3
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key3
+        type: key-auth
+  - username: JohnC4
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key4
+        type: key-auth
+  - username: JohnC5
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key5
+        type: key-auth
+  - username: JohnC6
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key6
+        type: key-auth
+  - username: JohnC7
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key7
+        type: key-auth
+  - username: JohnC8
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key8
+        type: key-auth
+  - username: JohnC9
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key9
+        type: key-auth
+  - username: JohnD1
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key1
+        type: key-auth
+  - username: JohnD10
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key10
+        type: key-auth
+  - username: JohnD2
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key2
+        type: key-auth
+  - username: JohnD3
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key3
+        type: key-auth
+  - username: JohnD4
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key4
+        type: key-auth
+  - username: JohnD5
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key5
+        type: key-auth
+  - username: JohnD6
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key6
+        type: key-auth
+  - username: JohnD7
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key7
+        type: key-auth
+  - username: JohnD8
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key8
+        type: key-auth
+  - username: JohnD9
+    credentials:
+      - name: hello
+        config:
+          key: JohnD-key9
+        type: key-auth
+  - username: JohnE1
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key1
+        type: key-auth
+  - username: JohnE10
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key10
+        type: key-auth
+  - username: JohnE2
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key2
+        type: key-auth
+  - username: JohnE3
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key3
+        type: key-auth
+  - username: JohnE4
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key4
+        type: key-auth
+  - username: JohnE5
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key5
+        type: key-auth
+  - username: JohnE6
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key6
+        type: key-auth
+  - username: JohnE7
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key7
+        type: key-auth
+  - username: JohnE8
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key8
+        type: key-auth
+  - username: JohnE9
+    credentials:
+      - name: hello
+        config:
+          key: JohnE-key9
+        type: key-auth
+  - username: JohnF1
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key1
+        type: key-auth
+  - username: JohnF10
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key10
+        type: key-auth
+  - username: JohnF2
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key2
+        type: key-auth
+  - username: JohnF3
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key3
+        type: key-auth
+  - username: JohnF4
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key4
+        type: key-auth
+  - username: JohnF5
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key5
+        type: key-auth
+  - username: JohnF6
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key6
+        type: key-auth
+  - username: JohnF7
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key7
+        type: key-auth
+  - username: JohnF8
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key8
+        type: key-auth
+  - username: JohnF9
+    credentials:
+      - name: hello
+        config:
+          key: JohnF-key9
+        type: key-auth
+  - username: JohnG1
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key1
+        type: key-auth
+  - username: JohnG10
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key10
+        type: key-auth
+  - username: JohnG2
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key2
+        type: key-auth
+  - username: JohnG3
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key3
+        type: key-auth
+  - username: JohnG4
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key4
+        type: key-auth
+  - username: JohnG5
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key5
+        type: key-auth
+  - username: JohnG6
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key6
+        type: key-auth
+  - username: JohnG7
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key7
+        type: key-auth
+  - username: JohnG8
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key8
+        type: key-auth
+  - username: JohnG9
+    credentials:
+      - name: hello
+        config:
+          key: JohnG-key9
+        type: key-auth
+  - username: JohnH1
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key1
+        type: key-auth
+  - username: JohnH10
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key10
+        type: key-auth
+  - username: JohnH2
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key2
+        type: key-auth
+  - username: JohnH3
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key3
+        type: key-auth
+  - username: JohnH4
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key4
+        type: key-auth
+  - username: JohnH5
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key5
+        type: key-auth
+  - username: JohnH6
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key6
+        type: key-auth
+  - username: JohnH7
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key7
+        type: key-auth
+  - username: JohnH8
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key8
+        type: key-auth
+  - username: JohnH9
+    credentials:
+      - name: hello
+        config:
+          key: JohnH-key9
+        type: key-auth
+  - username: JohnI1
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key1
+        type: key-auth
+  - username: JohnI10
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key10
+        type: key-auth
+  - username: JohnI2
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key2
+        type: key-auth
+  - username: JohnI3
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key3
+        type: key-auth
+  - username: JohnI4
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key4
+        type: key-auth
+  - username: JohnI5
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key5
+        type: key-auth
+  - username: JohnI6
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key6
+        type: key-auth
+  - username: JohnI7
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key7
+        type: key-auth
+  - username: JohnI8
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key8
+        type: key-auth
+  - username: JohnI9
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key9
+        type: key-auth
+  - username: JohnI10
+    credentials:
+      - name: hello
+        config:
+          key: JohnI-key10
+        type: key-auth
+  - username: JohnC6
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key6
+        type: key-auth
+  - username: JohnC9
+    credentials:
+      - name: hello
+        config:
+          key: JohnC-key9
+        type: key-auth
 services:
   - name: Demo
-    upstream:
-      scheme: http
-      nodes:
-        - host: 172.31.47.150
-          port: 1980
-          weight: 100
     plugins:
       key-auth:
         header: apikey
     routes:
-      - uris:
+      - name: Hello
+        methods:
+          - GET
+        priority: 0
+        uris:
           - /hello
-        name: Hello
+      - name: v2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v2
-        name: v2
+      - name: v3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v3
-        name: v3
+      - name: v4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v4
-        name: v4
+      - name: v5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v5
-        name: v5
+      - name: v6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v6
-        name: v6
+      - name: v7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v7
-        name: v7
+      - name: v8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v8
-        name: v8
+      - name: v9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v9
-        name: v9
+      - name: v10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /v10
-        name: v10
+      - name: apiA1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA1
-        name: apiA1
+      - name: apiA2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA2
-        name: apiA2
+      - name: apiA3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA3
-        name: apiA3
+      - name: apiA4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA4
-        name: apiA4
+      - name: apiA5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA5
-        name: apiA5
+      - name: apiA6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA6
-        name: apiA6
+      - name: apiA7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA7
-        name: apiA7
+      - name: apiA8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA8
-        name: apiA8
+      - name: apiA9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA9
-        name: apiA9
+      - name: apiA10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiA10
-        name: apiA10
+      - name: apiB1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB1
-        name: apiB1
+      - name: apiB2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB2
-        name: apiB2
+      - name: apiB3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB3
-        name: apiB3
+      - name: apiB4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB4
-        name: apiB4
+      - name: apiB5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB5
-        name: apiB5
+      - name: apiB6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB6
-        name: apiB6
+      - name: apiB7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB7
-        name: apiB7
+      - name: apiB8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB8
-        name: apiB8
+      - name: apiB9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB9
-        name: apiB9
+      - name: apiB10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiB10
-        name: apiB10
+      - name: apiC1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC1
-        name: apiC1
+      - name: apiC2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC2
-        name: apiC2
+      - name: apiC3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC3
-        name: apiC3
+      - name: apiC4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC4
-        name: apiC4
+      - name: apiC5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC5
-        name: apiC5
+      - name: apiC7
         methods:
           - GET
-      - uris:
-          - /apiC6
-        name: apiC6
-        methods:
-          - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC7
-        name: apiC7
+      - name: apiC8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC8
-        name: apiC8
+      - name: apiC10
         methods:
           - GET
-      - uris:
-          - /apiC9
-        name: apiC9
-        methods:
-          - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiC10
-        name: apiC10
+      - name: apiD1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD1
-        name: apiD1
+      - name: apiD2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD2
-        name: apiD2
+      - name: apiD3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD3
-        name: apiD3
+      - name: apiD4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD4
-        name: apiD4
+      - name: apiD5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD5
-        name: apiD5
+      - name: apiD6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD6
-        name: apiD6
+      - name: apiD7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD7
-        name: apiD7
+      - name: apiD8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD8
-        name: apiD8
+      - name: apiD9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD9
-        name: apiD9
+      - name: apiD10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiD10
-        name: apiD10
+      - name: apiE1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE1
-        name: apiE1
+      - name: apiE2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE2
-        name: apiE2
+      - name: apiE3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE3
-        name: apiE3
+      - name: apiE4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE4
-        name: apiE4
+      - name: apiE5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE5
-        name: apiE5
+      - name: apiE6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE6
-        name: apiE6
+      - name: apiE7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE7
-        name: apiE7
+      - name: apiE8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE8
-        name: apiE8
+      - name: apiE9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE9
-        name: apiE9
+      - name: apiE10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiE10
-        name: apiE10
+      - name: apiF1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF1
-        name: apiF1
+      - name: apiF2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF2
-        name: apiF2
+      - name: apiF3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF3
-        name: apiF3
+      - name: apiF4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF4
-        name: apiF4
+      - name: apiF5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF5
-        name: apiF5
+      - name: apiF6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF6
-        name: apiF6
+      - name: apiF7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF7
-        name: apiF7
+      - name: apiF8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF8
-        name: apiF8
+      - name: apiF9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF9
-        name: apiF9
+      - name: apiF10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiF10
-        name: apiF10
+      - name: apiG1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG1
-        name: apiG1
+      - name: apiG2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG2
-        name: apiG2
+      - name: apiG3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG3
-        name: apiG3
+      - name: apiG4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG4
-        name: apiG4
+      - name: apiG5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG5
-        name: apiG5
+      - name: apiG6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG6
-        name: apiG6
+      - name: apiG7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG7
-        name: apiG7
+      - name: apiG8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG8
-        name: apiG8
+      - name: apiG9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG9
-        name: apiG9
+      - name: apiG10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiG10
-        name: apiG10
+      - name: apiH1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH1
-        name: apiH1
+      - name: apiH2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH2
-        name: apiH2
+      - name: apiH3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH3
-        name: apiH3
+      - name: apiH4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH4
-        name: apiH4
+      - name: apiH5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH5
-        name: apiH5
+      - name: apiH6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH6
-        name: apiH6
+      - name: apiH7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH7
-        name: apiH7
+      - name: apiH8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH8
-        name: apiH8
+      - name: apiH9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH9
-        name: apiH9
+      - name: apiH10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiH10
-        name: apiH10
+      - name: apiI1
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI1
-        name: apiI1
+      - name: apiI2
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI2
-        name: apiI2
+      - name: apiI3
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI3
-        name: apiI3
+      - name: apiI4
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI4
-        name: apiI4
+      - name: apiI5
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI5
-        name: apiI5
+      - name: apiI6
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI6
-        name: apiI6
+      - name: apiI7
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI7
-        name: apiI7
+      - name: apiI8
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI8
-        name: apiI8
+      - name: apiI9
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI9
-        name: apiI9
+      - name: apiI10
         methods:
           - GET
-      - uris:
+        priority: 0
+        uris:
           - /apiI10
-        name: apiI10
+      - name: apiC6
         methods:
           - GET
-consumers:
-  - username: JaneDoe
-    plugins:
-      key-auth:
-        key: jane-key
-  - username: John2
-    plugins:
-      key-auth:
-        key: john-key2
-  - username: John3
-    plugins:
-      key-auth:
-        key: john-key3
-  - username: John4
-    plugins:
-      key-auth:
-        key: john-key4
-  - username: John5
-    plugins:
-      key-auth:
-        key: john-key5
-  - username: John6
-    plugins:
-      key-auth:
-        key: john-key6
-  - username: John7
-    plugins:
-      key-auth:
-        key: john-key7
-  - username: John8
-    plugins:
-      key-auth:
-        key: john-key8
-  - username: John9
-    plugins:
-      key-auth:
-        key: john-key9
-  - username: John10
-    plugins:
-      key-auth:
-        key: john-key10
-  - username: JohnA1
-    plugins:
-      key-auth:
-        key: JohnA-key1
-  - username: JohnA2
-    plugins:
-      key-auth:
-        key: JohnA-key2
-  - username: JohnA3
-    plugins:
-      key-auth:
-        key: JohnA-key3
-  - username: JohnA4
-    plugins:
-      key-auth:
-        key: JohnA-key4
-  - username: JohnA5
-    plugins:
-      key-auth:
-        key: JohnA-key5
-  - username: JohnA6
-    plugins:
-      key-auth:
-        key: JohnA-key6
-  - username: JohnA7
-    plugins:
-      key-auth:
-        key: JohnA-key7
-  - username: JohnA8
-    plugins:
-      key-auth:
-        key: JohnA-key8
-  - username: JohnA9
-    plugins:
-      key-auth:
-        key: JohnA-key9
-  - username: JohnA10
-    plugins:
-      key-auth:
-        key: JohnA-key10
-  - username: JohnB1
-    plugins:
-      key-auth:
-        key: JohnB-key1
-  - username: JohnB2
-    plugins:
-      key-auth:
-        key: JohnB-key2
-  - username: JohnB3
-    plugins:
-      key-auth:
-        key: JohnB-key3
-  - username: JohnB4
-    plugins:
-      key-auth:
-        key: JohnB-key4
-  - username: JohnB5
-    plugins:
-      key-auth:
-        key: JohnB-key5
-  - username: JohnB6
-    plugins:
-      key-auth:
-        key: JohnB-key6
-  - username: JohnB7
-    plugins:
-      key-auth:
-        key: JohnB-key7
-  - username: JohnB8
-    plugins:
-      key-auth:
-        key: JohnB-key8
-  - username: JohnB9
-    plugins:
-      key-auth:
-        key: JohnB-key9
-  - username: JohnB10
-    plugins:
-      key-auth:
-        key: JohnB-key10
-  - username: JohnC1
-    plugins:
-      key-auth:
-        key: JohnC-key1
-  - username: JohnC2
-    plugins:
-      key-auth:
-        key: JohnC-key2
-  - username: JohnC3
-    plugins:
-      key-auth:
-        key: JohnC-key3
-  - username: JohnC4
-    plugins:
-      key-auth:
-        key: JohnC-key4
-  - username: JohnC5
-    plugins:
-      key-auth:
-        key: JohnC-key5
-  - username: JohnC6
-    plugins:
-      key-auth:
-        key: JohnC-key6
-  - username: JohnC7
-    plugins:
-      key-auth:
-        key: JohnC-key7
-  - username: JohnC8
-    plugins:
-      key-auth:
-        key: JohnC-key8
-  - username: JohnC9
-    plugins:
-      key-auth:
-        key: JohnC-key9
-  - username: JohnC10
-    plugins:
-      key-auth:
-        key: JohnC-key10
-  - username: JohnD1
-    plugins:
-      key-auth:
-        key: JohnD-key1
-  - username: JohnD2
-    plugins:
-      key-auth:
-        key: JohnD-key2
-  - username: JohnD3
-    plugins:
-      key-auth:
-        key: JohnD-key3
-  - username: JohnD4
-    plugins:
-      key-auth:
-        key: JohnD-key4
-  - username: JohnD5
-    plugins:
-      key-auth:
-        key: JohnD-key5
-  - username: JohnD6
-    plugins:
-      key-auth:
-        key: JohnD-key6
-  - username: JohnD7
-    plugins:
-      key-auth:
-        key: JohnD-key7
-  - username: JohnD8
-    plugins:
-      key-auth:
-        key: JohnD-key8
-  - username: JohnD9
-    plugins:
-      key-auth:
-        key: JohnD-key9
-  - username: JohnD10
-    plugins:
-      key-auth:
-        key: JohnD-key10
-  - username: JohnE1
-    plugins:
-      key-auth:
-        key: JohnE-key1
-  - username: JohnE2
-    plugins:
-      key-auth:
-        key: JohnE-key2
-  - username: JohnE3
-    plugins:
-      key-auth:
-        key: JohnE-key3
-  - username: JohnE4
-    plugins:
-      key-auth:
-        key: JohnE-key4
-  - username: JohnE5
-    plugins:
-      key-auth:
-        key: JohnE-key5
-  - username: JohnE6
-    plugins:
-      key-auth:
-        key: JohnE-key6
-  - username: JohnE7
-    plugins:
-      key-auth:
-        key: JohnE-key7
-  - username: JohnE8
-    plugins:
-      key-auth:
-        key: JohnE-key8
-  - username: JohnE9
-    plugins:
-      key-auth:
-        key: JohnE-key9
-  - username: JohnE10
-    plugins:
-      key-auth:
-        key: JohnE-key10
-  - username: JohnF1
-    plugins:
-      key-auth:
-        key: JohnF-key1
-  - username: JohnF2
-    plugins:
-      key-auth:
-        key: JohnF-key2
-  - username: JohnF3
-    plugins:
-      key-auth:
-        key: JohnF-key3
-  - username: JohnF4
-    plugins:
-      key-auth:
-        key: JohnF-key4
-  - username: JohnF5
-    plugins:
-      key-auth:
-        key: JohnF-key5
-  - username: JohnF6
-    plugins:
-      key-auth:
-        key: JohnF-key6
-  - username: JohnF7
-    plugins:
-      key-auth:
-        key: JohnF-key7
-  - username: JohnF8
-    plugins:
-      key-auth:
-        key: JohnF-key8
-  - username: JohnF9
-    plugins:
-      key-auth:
-        key: JohnF-key9
-  - username: JohnF10
-    plugins:
-      key-auth:
-        key: JohnF-key10
-  - username: JohnG1
-    plugins:
-      key-auth:
-        key: JohnG-key1
-  - username: JohnG2
-    plugins:
-      key-auth:
-        key: JohnG-key2
-  - username: JohnG3
-    plugins:
-      key-auth:
-        key: JohnG-key3
-  - username: JohnG4
-    plugins:
-      key-auth:
-        key: JohnG-key4
-  - username: JohnG5
-    plugins:
-      key-auth:
-        key: JohnG-key5
-  - username: JohnG6
-    plugins:
-      key-auth:
-        key: JohnG-key6
-  - username: JohnG7
-    plugins:
-      key-auth:
-        key: JohnG-key7
-  - username: JohnG8
-    plugins:
-      key-auth:
-        key: JohnG-key8
-  - username: JohnG9
-    plugins:
-      key-auth:
-        key: JohnG-key9
-  - username: JohnG10
-    plugins:
-      key-auth:
-        key: JohnG-key10
-  - username: JohnH1
-    plugins:
-      key-auth:
-        key: JohnH-key1
-  - username: JohnH2
-    plugins:
-      key-auth:
-        key: JohnH-key2
-  - username: JohnH3
-    plugins:
-      key-auth:
-        key: JohnH-key3
-  - username: JohnH4
-    plugins:
-      key-auth:
-        key: JohnH-key4
-  - username: JohnH5
-    plugins:
-      key-auth:
-        key: JohnH-key5
-  - username: JohnH6
-    plugins:
-      key-auth:
-        key: JohnH-key6
-  - username: JohnH7
-    plugins:
-      key-auth:
-        key: JohnH-key7
-  - username: JohnH8
-    plugins:
-      key-auth:
-        key: JohnH-key8
-  - username: JohnH9
-    plugins:
-      key-auth:
-        key: JohnH-key9
-  - username: JohnH10
-    plugins:
-      key-auth:
-        key: JohnH-key10
-  - username: JohnI1
-    plugins:
-      key-auth:
-        key: JohnI-key1
-  - username: JohnI2
-    plugins:
-      key-auth:
-        key: JohnI-key2
-  - username: JohnI3
-    plugins:
-      key-auth:
-        key: JohnI-key3
-  - username: JohnI4
-    plugins:
-      key-auth:
-        key: JohnI-key4
-  - username: JohnI5
-    plugins:
-      key-auth:
-        key: JohnI-key5
-  - username: JohnI6
-    plugins:
-      key-auth:
-        key: JohnI-key6
-  - username: JohnI7
-    plugins:
-      key-auth:
-        key: JohnI-key7
-  - username: JohnI8
-    plugins:
-      key-auth:
-        key: JohnI-key8
-  - username: JohnI9
-    plugins:
-      key-auth:
-        key: JohnI-key9
-  - username: JohnI10
-    plugins:
-      key-auth:
-        key: JohnI-key10
+        priority: 0
+        uris:
+          - /apiC6
+      - name: apiC9
+        methods:
+          - GET
+        priority: 0
+        uris:
+          - /apiC9
+    strip_path_prefix: true
+    upstream:
+      name: default
+      hash_on: vars
+      nodes:
+        - host: 172.31.47.150
+          port: 1980
+          priority: 0
+          weight: 100
+      pass_host: pass
+      retry_timeout: 0
+      scheme: http
+      type: roundrobin
+    upstreams: []
