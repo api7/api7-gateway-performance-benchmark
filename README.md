@@ -263,14 +263,15 @@ We have provided adc configurations for each of the 9 scenarios, which you can u
 
 ## Example
 
-```
+```shell
+# adc command
 $ ./adc ping
 
 Connected to backend successfully!
 
 $ ./adc sync -f adc_conf/<filename>.yaml
 
-# wrk
+# wrk command
 # test upstream
 $ wrk -c100 -t4 -d120 -R50000 -U http://172.31.6.98:1980/hello
 
